@@ -8,6 +8,10 @@ const UserDropdown: FC = () => {
   const [toggled, setToggled] = useState(false);
   const userData = useRecoilValue(currentUser);
 
+  if (currentUser == null) {
+    return <></>;
+  }
+
   return (
       <div className="relative">
         <div

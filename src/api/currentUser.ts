@@ -1,3 +1,4 @@
+import { authService } from './authService';
 import client from './client';
 
 /**
@@ -11,7 +12,12 @@ import client from './client';
 const URL = 'current-user/';
 
 const fetchCurrentUser = async () => {
-  return client.get(URL);
+  const accessToken = authService.getAccessTokenFromLocalStorage();
+  const headers = {
+    Authorization: `Bearer ${accessToken}`,
+  };
+  if (accessToken === null) return null;
+  return client.get(URL, {headers});
 };
 
 const actions = {

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import { authService } from './api/authService';
-import Footer from './components/AppLayout/Footer';
+import FooterLoggedIn from './components/AppLayout/FooterLoggedIn';
+import Footer from './components/AppLayout/FooterLoggedIn';
+import FooterLoggedOut from './components/AppLayout/FooterLoggedOut';
 import NavbarLoggedIn from './components/AppLayout/NavbarLoggedIn';
 import NavbarLoggedOut from './components/AppLayout/NavbarLoggedOut';
 import useFetchCurrentUser from './hooks/auth/useFetchCurrentUser';
@@ -37,14 +39,23 @@ const App: React.FC = () => {
         {isLoggedIn() ? <NavbarLoggedIn/> : <NavbarLoggedOut/>}
         <div className="w-full h-full pt-[88px] min-h-[calc(100vh-176px)]">
           <main className="w-full h-full max-w-container mx-auto py-8 px-4 min-h-[calc(100vh-176px)]">
-            <Routes>
-              <Route path="*" element={<Navigate to="/" />}/>
-              <Route path="/" element={<CoursesPageArchive/>}/>
-              <Route path="/course/:id" element={<CoursesSinglePage/>}/>
-              <Route path="/login" element={<LoginPage/>}/>
-            </Routes>
+            {isLoggedIn() ? (
+              <Routes>
+                <Route path="*" element={<Navigate to="/" />}/>
+                <Route path="/" element={<CoursesPageArchive/>}/>
+                <Route path="/courses/:id" element={<CoursesSinglePage/>}/>
+                <Route path="/login" element={<Navigate to="/" />}/>
+              </Routes>
+            ) : (
+              <Routes>
+                <Route path="*" element={<Navigate to="/" />}/>
+                <Route path="/" element={<CoursesPageArchive/>}/>
+                <Route path="/course/:id" element={<CoursesSinglePage/>}/>
+                <Route path="/login" element={<LoginPage/>}/>
+              </Routes>
+            )}
           </main>
-          <Footer/>
+          {isLoggedIn() ? <FooterLoggedIn/> : <FooterLoggedOut/>}
         </div>
       </div>
     </Router>

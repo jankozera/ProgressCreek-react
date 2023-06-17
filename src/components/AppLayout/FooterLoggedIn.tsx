@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import img from '../../assets/logo.png';
 
-const Footer: FC = () => {
+const FooterLoggedIn: FC = () => {
     return (
         <div className="w-full bg-black-primary">
           <div className="max-w-container mx-auto h-[88px] flex items-center justify-between w-full px-4">
@@ -20,4 +20,4 @@ const Footer: FC = () => {
     )
 };
 
-export default Footer;
+export default FooterLoggedIn;
