@@ -25,6 +25,7 @@ type CurrentUserType = {
     position: string;
     points: number;
   }
+  subscription: boolean;
 };
 
 export default CurrentUserType;

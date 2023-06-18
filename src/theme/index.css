@@ -26,3 +26,21 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.course-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.course-content h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.course-content p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 17px;
+}

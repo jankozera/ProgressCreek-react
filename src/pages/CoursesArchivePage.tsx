@@ -11,8 +11,6 @@ const CoursesPageArchive: FC = () => {
   const {isLoading, isError} = useFetchCourses();
   const courses = useRecoilValue(coursesArray);
 
-  console.log(courses);
-
   if (isLoading) {
     return <UILoadingIndicator />
   }

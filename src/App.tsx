@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import { authService } from './api/authService';
 import FooterLoggedIn from './components/AppLayout/FooterLoggedIn';
-import Footer from './components/AppLayout/FooterLoggedIn';
 import FooterLoggedOut from './components/AppLayout/FooterLoggedOut';
 import NavbarLoggedIn from './components/AppLayout/NavbarLoggedIn';
 import NavbarLoggedOut from './components/AppLayout/NavbarLoggedOut';
 import useFetchCurrentUser from './hooks/auth/useFetchCurrentUser';
 import CoursesPageArchive from './pages/CoursesArchivePage';
 import CoursesSinglePage from './pages/CoursesSinglePage';
+import CoursesSinglePageLoggedOut from './pages/CoursesSinglePageLoggedOut';
 import LoginPage from './pages/LoginPage';
 
 /* Theme variables */
@@ -50,7 +50,7 @@ const App: React.FC = () => {
               <Routes>
                 <Route path="*" element={<Navigate to="/" />}/>
                 <Route path="/" element={<CoursesPageArchive/>}/>
-                <Route path="/course/:id" element={<CoursesSinglePage/>}/>
+                <Route path="/courses/:id" element={<CoursesSinglePageLoggedOut/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
               </Routes>
             )}

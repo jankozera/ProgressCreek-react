@@ -5,7 +5,7 @@ import { coursesArray } from '../../state/courses/courses';
 
 const useFetchCourses = () => {
   const setCourses = useSetRecoilState(coursesArray);
-  return useQuery('fetchNews', async () => {
+  return useQuery('fetchCourses', async () => {
     const courses = await actions.fetchCourses();
     setCourses(courses?.data);
     return courses;
