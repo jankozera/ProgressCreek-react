@@ -10,6 +10,7 @@ import CoursesPageArchive from './pages/CoursesArchivePage';
 import CoursesSinglePage from './pages/CoursesSinglePage';
 import CoursesSinglePageLoggedOut from './pages/CoursesSinglePageLoggedOut';
 import LoginPage from './pages/LoginPage';
+import QuizPage from './pages/QuizPage';
 
 /* Theme variables */
 import './theme/index.css';
@@ -44,6 +45,7 @@ const App: React.FC = () => {
                 <Route path="*" element={<Navigate to="/" />}/>
                 <Route path="/" element={<CoursesPageArchive/>}/>
                 <Route path="/courses/:id" element={<CoursesSinglePage/>}/>
+                <Route path="/courses/:id/quiz/" element={<QuizPage/>}/>
                 <Route path="/login" element={<Navigate to="/" />}/>
               </Routes>
             ) : (

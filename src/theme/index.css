@@ -44,3 +44,18 @@ body {
   margin-bottom: 10px;
   line-height: 17px;
 }
+
+.answer {
+  display: inline-block;
+  width: 285px;
+  height: 63px;
+  margin-right: 24px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  color: #070707;
+  padding: 12px 16px;
+}
+
+.answer.selected {
+  background: rgba(6, 214, 160, 0.6);
+}

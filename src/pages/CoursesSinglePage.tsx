@@ -102,7 +102,7 @@ const CoursesSinglePage: FC = () => {
               {currentProgress !== 100 ? (
                 <span>Go to quiz</span>
               ) : (
-                <Link to="/">Go to quiz</Link>
+                <Link to={`/courses/${id}/quiz/`}>Go to quiz</Link>
               )}
             </button>
             <p className="text-sm font-light text-[#EB5757] mt-2 opacity-0 group-hover:opacity-100">You need to complete all lessons to make the quiz!</p>
